@@ -1,12 +1,14 @@
+
 <?php
+
+
  session_start();
  if(isset($_POST['email']) && isset($_POST['passwd']))
  {
-    echo 'mot de passe juste connection...';
      // connexion à la base de données
      $db_username = 'mautorsadmin';
      $db_password = 'mautorspassword';
-     $db_name     = 'mautorspassword';
+     $db_name     = 'mautorsdb';
      $db_host     = 'localhost';
      $db = mysqli_connect($db_host, $db_username, $db_password,$db_name)
             or die('could not connect to database');
@@ -18,23 +20,21 @@
  	//$surname = mysqli_real_escape_string($db,htmlspecialchars($_POST['surname']));  
     $password = mysqli_real_escape_string($db,htmlspecialchars(md5($_POST['passwd'])));
     
-    
          $requete = "SELECT count(*) FROM T_Utilisateur where 
          email = '".$email."' and motdepasse = '".$password."' ";
         $exec_requete = mysqli_query($db,$requete);
         $reponse      = mysqli_fetch_array($exec_requete);
         $count = $reponse['count(*)'];
-        if($count!=0) // nom d'utilisateur et mot de passe correctes
+        if($count>=1) // nom d'utilisateur et mot de passe correctes
         {
 		   //session_start();
 		   //$_SESSION['username'] = $username;
-		   header('Location: compte.html');
-		   exit();
+           header('Location: compte.php');
+           exit();
         }
         else
-        {   
-
-            echo '<!DOCTYPE html>
+        {
+            echo'<!DOCTYPE html>
             <html>
             
             <head>
@@ -95,12 +95,8 @@
             
             <body>
                 <div class="login-dark">
-                    <form method="post">
-                        <h2 class="sr-only">Login Form</h2>
-                        <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
-                        <div class="form-group"><input class="form-control" type="email" id="email" name="email" placeholder="Email"></div>
-                        <div class="form-group"><input class="form-control" type="password" id="passwd" name="passwd" placeholder="Password"></div>
-                        <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="font-family: Cabin, sans-serif;">Log In</button></div><a class="forgot" href="inscription.html">Register</a><a class="forgot" href="perdu.html">Forgot your email or password?</a></form>
+                    <form method="post" style="padding-right: 15px;padding-left: 15px;">
+                        <h2 class="sr-only">Login Form</h2><a class="forgot" href="perdu.html" style="color: rgb(186,0,0);font-size: 26px;">Wrong password or email</a></form>
                 </div>
                 <nav class="navbar navbar-light navbar-expand-md navbar navbar-expand-lg fixed-top" id="mainNav" style="color: rgb(255,255,255);font-size: 20px;font-family: Cabin, sans-serif;background-color: rgba(0,0,0,0.11);">
                     <div class="container-fluid"><a class="navbar-brand" href="index.html" style="color: rgba(255,255,255,0.9);background-image: url(&quot;assets/img/logo_MautoRS_final.png&quot;);width: 65px;height: 65px;background-position: center;background-size: contain;"></a><button data-toggle="collapse"
@@ -159,14 +155,37 @@
                 <script src="assets/js/Dynamically-Queue-Videos.js"></script>
             </body>
             
-            </html>';
-            mysqli_close($db); // fermer la connexion
-
+            </html>
+            ';
+            echo'<head><meta http-equiv="refresh" content="1;URL=Connexion.php"></head>';
+            //header('Location: Connexion.php');
+        }
     }
-}
- else
-{
-    
-    //header('Location: Connexion.php');
-}
-// ?>
+
+?>
+<!DOCTYPE html>
+<html>
+<!----------php----------->
+<?php
+include 'head.php'
+?>
+
+<body>
+    <div class="login-dark">
+        <form method="POST">
+            <h2 class="sr-only">Login Form</h2>
+            <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
+            <div class="form-group"><input class="form-control" type="email" id="email" name="email" placeholder="Email"></div>
+            <div class="form-group"><input class="form-control" type="password" id="passwd" name="passwd" placeholder="Password"></div>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="font-family: Cabin, sans-serif;">Log In</button></div><a class="forgot" href="inscription.php">Register</a><a class="forgot" href="perdu.html">Forgot your email or password?</a>
+        </form>
+    </div>
+
+<!----------php----------->
+<?php
+include 'footer.php';
+include 'menu.php';
+include 'script.php';
+?>
+    </body>
+</html>
