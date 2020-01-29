@@ -1,6 +1,8 @@
 <!----------php---------->
 <?php
+
 include 'head.php';
+include 'menu.php';
 
 session_start();
  if($_POST['password'] != $_POST['passwordrepeat'] && $_POST['password']!='' && isset($_POST['firstname']))//isset($_POST['fistname']) && isset($_POST['date']) && isset($_POST['address']) && isset($_POST['location']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['passwordrepeat']))
@@ -315,7 +317,6 @@ session_start();
 <!---------------php-------------->
 <?php
 include 'footer.php';
-include 'menu.php';
 include 'script.php';
 ?>
 </body>
