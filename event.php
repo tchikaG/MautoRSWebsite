@@ -3,21 +3,18 @@
 <!----------php---------->
 <?php
 include 'head.php';
+include 'menu.php';
 ?>
+
 <body>
-    <div data-bs-parallax-bg="true" style="height: 1000px;background-image: url(&quot;assets/img/star-sky.jpg&quot;);background-position: center;background-size: auto;padding-top: 300px;padding-bottom: 200px;">
+<div data-bs-parallax-bg="true" style="height: 1000px;background-image: url(&quot;assets/img/star-sky.jpg&quot;);background-position: center;background-size: auto;padding-top: 300px;padding-bottom: 200px;">
         <div class="container">
-            <h1 style="font-family: Cabin, sans-serif;padding-bottom: 10px;">Evenement</h1>
-            <p class="text-center" style="font-size: 25px;font-family: Cabin, sans-serif;color: rgb(41,41,41);">Inscrivez-vous à l'un de nos roadtrips</p>
+            <h1 style="font-family: Cabin, sans-serif;padding-bottom: 10px;">Event</h1>
+            <p class="text-center" style="font-size: 25px;font-family: Cabin, sans-serif;color: rgb(41,41,41);"><strong>Sign up for one of our roadtrips</strong></p>
         </div>
     </div>
     <div style="background-color: rgb(238,244,247);">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12" style="padding-top: 20px;padding-bottom: 20px;">
-                    <div style="height: 130px;background-color: #ffffff;"></div>
-                </div>
-            </div>
+        <div class="container" style="padding-top: 50px;padding-bottom: 80px;"><button class="btn btn-primary" type="button" style="margin-left: 1006px;margin-bottom: 28px;background-color: rgba(93,130,169,0.83);font-size: 25px;">ADD</button>
             <div class="row">
                 <div class="col-md-12" style="padding-top: 20px;padding-bottom: 20px;">
                     <div style="height: 130px;background-color: #ffffff;"></div>
@@ -29,7 +26,6 @@ include 'head.php';
 <!---------------php-------------->
 <?php
 include 'footer.php';
-include 'menu.php';
 include 'script.php';
 ?>
 </div><a class="cd-top js-cd-top cd-top--fade-out cd-top--show" style="background-image: url(&quot;assets/img/cd-top-arrow.svg&quot;);background-color: rgba(118,118,118,0.8);background-repeat: no-repeat;" href="#">Top</a>
