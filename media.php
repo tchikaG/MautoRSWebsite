@@ -3,6 +3,7 @@
 
 <?php
 include 'head.php';
+include 'menu.php';
 ?>
 
 <body>
@@ -46,7 +47,6 @@ include 'head.php';
 <!---------------php-------------->
 <?php
 include 'footer.php';
-include 'menu.php';
 include 'script.php';
 ?>
 </html>
