@@ -7,7 +7,7 @@ session_start();
  {
     echo'<!DOCTYPE html>
     <html>
-    
+
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -63,7 +63,7 @@ session_start();
         <link rel="stylesheet" href="assets/css/Video-Responsive.css">
         <link rel="stylesheet" href="assets/css/Zig-Zag-Timeline-v3.css">
     </head>
-    
+
     <body>
         <div class="login-dark">
             <form method="post" style="padding-right: 15px;padding-left: 15px;">
@@ -125,7 +125,7 @@ session_start();
         <script src="assets/js/Video-Parallax-Background.js"></script>
         <script src="assets/js/Dynamically-Queue-Videos.js"></script>
     </body>
-    
+
     </html>
     ';
     echo'<head><meta http-equiv="refresh" content="1;URL=inscription.php"></head>';
@@ -139,12 +139,12 @@ session_start();
      $db_host     = 'localhost';
      $db = mysqli_connect($db_host, $db_username, $db_password,$db_name)
             or die('could not connect to database');
-    
+
      // on applique les deux fonctions mysqli_real_escape_string et htmlspecialchars
      // pour éliminer toute attaque de type injection SQL et XSS
     // $username = mysqli_real_escape_string($db,htmlspecialchars($_POST['username']));
- 	$name = $_POST['name']; 
- 	//$surname = mysqli_real_escape_string($db,htmlspecialchars($_POST['surname'])); 
+ 	  $name = $_POST['name'];
+ 	  //$surname = mysqli_real_escape_string($db,htmlspecialchars($_POST['surname'])); 
     $firstname = $_POST['firstname'];
     $date = $_POST['date'];
     $adress = $_POST['address'];
@@ -158,7 +158,7 @@ session_start();
 
     echo'<!DOCTYPE html>
     <html>
-    
+
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
@@ -214,7 +214,7 @@ session_start();
         <link rel="stylesheet" href="assets/css/Video-Responsive.css">
         <link rel="stylesheet" href="assets/css/Zig-Zag-Timeline-v3.css">
     </head>
-    
+
     <body>
         <div class="login-dark">
             <form method="post" style="padding-right: 15px;padding-left: 15px;">
@@ -276,14 +276,14 @@ session_start();
         <script src="assets/js/Video-Parallax-Background.js"></script>
         <script src="assets/js/Dynamically-Queue-Videos.js"></script>
     </body>
-    
+
     </html>
     ';
     echo'<head><meta http-equiv="refresh" content="2;URL=Connexion.php"></head>';
     exit();
 
  }
- 
+
 
 
 ?>
@@ -310,7 +310,7 @@ session_start();
                 <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-color: rgb(33,74,128);">Sign Up</button></div><a class="already" href="Connexion.php">You already have an account? Login here.</a></form>
         </div>
     </div>
-    
+
     </div><a class="cd-top js-cd-top cd-top--fade-out cd-top--show" style="background-image: url(&quot;assets/img/cd-top-arrow.svg&quot;);background-color: rgba(118,118,118,0.8);background-repeat: no-repeat;" href="#0">Top</a>
 <!---------------php-------------->
 <?php
