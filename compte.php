@@ -3,6 +3,7 @@
 <!--------php--------->
 <?php
 include 'head.php';
+include 'menu.php';
 ?>
 <body style="background-image: url(&quot;assets/img/star-sky.jpg&quot;);">
     <div class="row" style="background-image: url(&quot;assets/img/star-sky.jpg&quot;);">
@@ -39,7 +40,7 @@ include 'head.php';
                             </div>
                             <hr>
                             <div class="form-row">
-                                <div class="col-md-12 content-right"><button class="btn btn-primary form-btn" type="submit">SAVE </button><button class="btn btn-danger form-btn" type="reset">RESET</button></div>
+                                <div class="col-md-12 content-right"><button class="btn btn-primary form-btn" type="submit">SAVE </button></div>
                             </div>
                         </div>
                     </div>
@@ -50,7 +51,6 @@ include 'head.php';
 
 <?php
 include 'footer.php';
-include 'menu.php';
 include 'script.php';
 ?>
 </body>
