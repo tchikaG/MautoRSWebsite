@@ -27,8 +27,8 @@
         $count = $reponse['count(*)'];
         if($count>=1) // nom d'utilisateur et mot de passe correctes
         {
-		   //session_start();
-		   //$_SESSION['username'] = $username;
+		   session_start();
+		   $_SESSION['email'] = $email;
            header('Location: compte.php');
            exit();
         }

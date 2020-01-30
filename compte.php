@@ -1,6 +1,19 @@
+<?php
+session_start();
+$db_username = 'mautorsadmin';
+$db_password = 'mautorspassword';
+$db_name     = 'mautorsdb';
+$db_host     = 'localhost';
+$db = mysqli_connect($db_host, $db_username, $db_password,$db_name)
+       or die('could not connect to database');
+$email = $_SESSION['email'];
+$requete = "SELECT * FROM T_Utilisateur";
+$resultat = $db->query($requete);
+?>
+
 <!DOCTYPE html>
 <html>
-<!--------php--------->
+<!--------php------       --->
 <?php
 include 'head.php';
 include 'menu.php';
@@ -20,7 +33,10 @@ include 'menu.php';
                             <hr>
                             <div class="form-row">
                                 <div class="col-sm-12 col-md-6">
-                                    <div class="form-group"><label style="color: rgb(255,255,255);">Firstname </label><input class="form-control" type="text" name="firstname" required=""></div>
+                                    <div class="form-group"><label style="color: rgb(255,255,255);"><?php while ($ligne = $resultat->fetch_assoc()) {
+                            echo  '<h4>'.$ligne['prenom'].'</h4>';
+                        }
+                    ?> </label><input class="form-control" type="text" name="firstname" required=""></div>
                                     <div class="form-group"><label style="color: rgb(255,255,255);">Address</label><input class="form-control" type="text" name="firstname" required=""></div>
                                 </div>
                                 <div class="col-sm-12 col-md-6">

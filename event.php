@@ -1,3 +1,13 @@
+<?php
+$db_username = 'mautorsadmin';
+$db_password = 'mautorspassword';
+$db_name     = 'mautorsdb';
+$db_host     = 'localhost';
+$db = mysqli_connect($db_host, $db_username, $db_password,$db_name)
+       or die('could not connect to database');
+$requete = "SELECT * FROM T_Event";
+$resultat = $db->query($requete);
+?>
 <!DOCTYPE html>
 <html>
 <!----------php---------->
@@ -17,7 +27,13 @@ include 'menu.php';
         <div class="container" style="padding-top: 50px;padding-bottom: 80px;"><button class="btn btn-primary" type="button" style="margin-left: 1006px;margin-bottom: 28px;background-color: rgba(93,130,169,0.83);font-size: 25px;">ADD</button>
             <div class="row">
                 <div class="col-md-12" style="padding-top: 20px;padding-bottom: 20px;">
-                    <div style="height: 130px;background-color: #ffffff;"></div>
+                    <div style="height: 130px;background-color: #ffffff;">
+                    <?php 
+                        while ($ligne = $resultat->fetch_assoc()) {
+                            echo  $ligne['err'].'<h4><br>'.$ligne['titre'].'</h4>  <br> <h5>'.$ligne['description'].'</h5>';
+                        }
+                    ?>
+                    </div>
                 </div>
             </div>
         </div>
