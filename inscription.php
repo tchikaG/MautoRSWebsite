@@ -69,17 +69,17 @@ session_start();
     <body>
         <div class="login-dark">
             <form method="post" style="padding-right: 15px;padding-left: 15px;">
-                <h2 class="sr-only">Login Form</h2><a class="forgot" href="perdu.html" style="color: rgb(186,0,0);font-size: 26px;">Not the same password</a></form>
+                <h2 class="sr-only">Login Form</h2><a class="forgot" href="perdu.php" style="color: rgb(186,0,0);font-size: 26px;">Not the same password</a></form>
         </div>
         <nav class="navbar navbar-light navbar-expand-md navbar navbar-expand-lg fixed-top" id="mainNav" style="color: rgb(255,255,255);font-size: 20px;font-family: Cabin, sans-serif;background-color: rgba(0,0,0,0.11);">
-            <div class="container-fluid"><a class="navbar-brand" href="index.html" style="color: rgba(255,255,255,0.9);background-image: url(&quot;assets/img/logo_MautoRS_final.png&quot;);width: 65px;height: 65px;background-position: center;background-size: contain;"></a><button data-toggle="collapse"
+            <div class="container-fluid"><a class="navbar-brand" href="index.php" style="color: rgba(255,255,255,0.9);background-image: url(&quot;assets/img/logo_MautoRS_final.png&quot;);width: 65px;height: 65px;background-position: center;background-size: contain;"></a><button data-toggle="collapse"
                     class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navcol-1" style="max-width: 328px;">
                     <ul class="nav navbar-nav">
-                        <li class="nav-item" role="presentation"><a class="nav-link active" href="event.html" style="color: rgba(255,255,255,0.9);">Evénement</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="media.html" style="color: rgba(255,255,255,0.5);">Média</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="shop.html" style="color: rgba(255,255,255,0.5);">Shop</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="Connexion.html" style="color: rgba(255,255,255,0.5);">Compte</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link active" href="event.php" style="color: rgba(255,255,255,0.9);">Evénement</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="media.php" style="color: rgba(255,255,255,0.5);">Média</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="shop.php" style="color: rgba(255,255,255,0.5);">Shop</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="Connexion.php" style="color: rgba(255,255,255,0.5);">Compte</a></li>
                     </ul>
                 </div>
             </div>
@@ -92,9 +92,9 @@ session_start();
                         <div class="col-sm-6 col-md-3 item">
                             <h3><strong>Quick access</strong></h3>
                             <ul>
-                                <li><a href="info.html">Information</a></li>
-                                <li><a href="Contact.html">Contact</a></li>
-                                <li><a href="Connexion.html">Connexion</a></li>
+                                <li><a href="info.php">Information</a></li>
+                                <li><a href="Contact.php">Contact</a></li>
+                                <li><a href="Connexion.php">Connexion</a></li>
                             </ul>
                         </div>
                         <div class="col-md-6 item text">
@@ -220,14 +220,14 @@ session_start();
     <body>
         <div class="login-dark">
             <form method="post" style="padding-right: 15px;padding-left: 15px;">
-                <h2 class="sr-only">Login Form</h2><a class="forgot" href="perdu.html" style="color: rgb(0,207,69);font-size: 26px;">Account created</a></form>
+                <h2 class="sr-only">Login Form</h2><a class="forgot" href="perdu.php" style="color: rgb(0,207,69);font-size: 26px;">Account created</a></form>
         </div>
         <nav class="navbar navbar-light navbar-expand-md navbar navbar-expand-lg fixed-top" id="mainNav" style="color: rgb(255,255,255);font-size: 20px;font-family: Cabin, sans-serif;background-color: rgba(0,0,0,0.11);">
-            <div class="container-fluid"><a class="navbar-brand" href="index.html" style="color: rgba(255,255,255,0.9);background-image: url(&quot;assets/img/logo_MautoRS_final.png&quot;);width: 65px;height: 65px;background-position: center;background-size: contain;"></a><button data-toggle="collapse"
+            <div class="container-fluid"><a class="navbar-brand" href="index.php" style="color: rgba(255,255,255,0.9);background-image: url(&quot;assets/img/logo_MautoRS_final.png&quot;);width: 65px;height: 65px;background-position: center;background-size: contain;"></a><button data-toggle="collapse"
                     class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navcol-1" style="max-width: 328px;">
                     <ul class="nav navbar-nav">
-                        <li class="nav-item" role="presentation"><a class="nav-link active" href="event.html" style="color: rgba(255,255,255,0.9);">Evénement</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link active" href="event.php" style="color: rgba(255,255,255,0.9);">Evénement</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="media.html" style="color: rgba(255,255,255,0.5);">Média</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="shop.html" style="color: rgba(255,255,255,0.5);">Shop</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="Connexion.html" style="color: rgba(255,255,255,0.5);">Compte</a></li>
