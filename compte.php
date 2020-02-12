@@ -7,17 +7,18 @@ $db_host     = 'localhost';
 $db = mysqli_connect($db_host, $db_username, $db_password,$db_name)
        or die('could not connect to database');
 $email = $_SESSION['email'];
-$requete = "SELECT * FROM T_Utilisateur";
+$requete = "SELECT * FROM T_Utilisateur WHERE  email = '".$email."' ";
 $resultat = $db->query($requete);
 ?>
 
 <!DOCTYPE html>
 <html>
-<!--------php------       --->
+<!--------php--------->
 <?php
 include 'head.php';
 include 'menu.php';
 ?>
+
 <body style="background-image: url(&quot;assets/img/star-sky.jpg&quot;);">
     <div class="row" style="background-image: url(&quot;assets/img/star-sky.jpg&quot;);">
         <div class="col">
@@ -33,19 +34,16 @@ include 'menu.php';
                             <hr>
                             <div class="form-row">
                                 <div class="col-sm-12 col-md-6">
-                                    <div class="form-group"><label style="color: rgb(255,255,255);"><?php while ($ligne = $resultat->fetch_assoc()) {
-                            echo  '<h4>'.$ligne['prenom'].'</h4>';
-                        }
-                    ?> </label><input class="form-control" type="text" name="firstname" required=""></div>
-                                    <div class="form-group"><label style="color: rgb(255,255,255);">Address</label><input class="form-control" type="text" name="firstname" required=""></div>
+                                    <div class="form-group"><label style="color: rgb(255,255,255);">First Name</label><input class="form-control" type="text" name="firstname" value="<?php while ($ligne = $resultat->fetch_assoc()) {echo  ''.$ligne['prenom'].'';}?>" required=""></div>
+                                    <div class="form-group"><label style="color: rgb(255,255,255);">Address</label><input class="form-control" type="text" name="firstname" value="<?php while ($ligne = $resultat->fetch_assoc()) {echo  ''.$ligne['adress'].'';}?>" required=""></div>
                                 </div>
                                 <div class="col-sm-12 col-md-6">
-                                    <div class="form-group"><label style="color: rgb(255,255,255);">Lastname </label><input class="form-control" type="text" name="lastname" required=""></div>
-                                    <div class="form-group"><label style="color: rgb(255,255,255);">Location</label><input class="form-control" type="text" name="lastname" required=""></div>
+                                    <div class="form-group"><label style="color: rgb(255,255,255);">Lastname </label><input class="form-control" type="text" name="lastname" value="<?php while ($ligne = $resultat->fetch_assoc()) {echo  ''.$ligne['nom'].'';}?>" required=""></div>
+                                    <div class="form-group"><label style="color: rgb(255,255,255);">Location</label><input class="form-control" type="text" name="lastname" value="<?php while ($ligne = $resultat->fetch_assoc()) {echo  ''.$ligne['ville'].'';}?>" required=""></div>
                                 </div>
                             </div>
                             <div class="form-group"><label style="color: rgb(255,255,255);">Phone</label><input class="form-control" type="tel" required=""></div>
-                            <div class="form-group"><label style="color: rgb(255,255,255);">Email </label><input class="form-control" type="email" required=""></div>
+                            <div class="form-group"><label style="color: rgb(255,255,255);">Email </label><input class="form-control" type="email" value="<?php while ($ligne = $resultat->fetch_assoc()) {echo  ''.$ligne['email'].'';}?>" required=""></div>
                             <div class="form-row">
                                 <div class="col-sm-12 col-md-6">
                                     <div class="form-group"><label style="color: rgb(255,255,255);">Password </label><input class="form-control" type="password" required=""></div>
