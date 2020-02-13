@@ -32,31 +32,58 @@ include 'menu.php';
                             </div><input type="file" class="form-control" name="avatar-file"></div>
                         <div class="col-md-8">
                             <h1 style="color: rgb(255,255,255);">Profile </h1>
-                            <hr>
-                            <div class="form-row">
-                                <div class="col-sm-12 col-md-6">
-                                    <div class="form-group"><label style="color: rgb(255,255,255);">First Name</label><input class="form-control" type="text" name="firstname" value="<?php echo  $ligne['prenom'] ?>" required=""></div>
-                                    <div class="form-group"><label style="color: rgb(255,255,255);">Address</label><input class="form-control" type="text" name="firstname" value="<?php echo  $ligne['adress'] ?>" required=""></div>
-                                </div>
-                                <div class="col-sm-12 col-md-6">
-                                    <div class="form-group"><label style="color: rgb(255,255,255);">Lastname </label><input class="form-control" type="text" name="lastname" value="<?php echo  $ligne['nom'] ?>" required=""></div>
-                                    <div class="form-group"><label style="color: rgb(255,255,255);">Location</label><input class="form-control" type="text" name="lastname" value="<?php echo  $ligne['ville'] ?>" required=""></div>
-                                </div>
-                            </div>
-                            <div class="form-group"><label style="color: rgb(255,255,255);">Birtday</label><input class="form-control" type="tel"  value="<?php echo  $ligne['datenaiss'] ?>"required=""></div>
-                            <div class="form-group"><label style="color: rgb(255,255,255);">Email </label><input class="form-control" type="email" value="<?php echo  $ligne['email'] ?>" required=""></div>
-                            <div class="form-row">
-                                <div class="col-sm-12 col-md-6">
-                                    <div class="form-group"><label style="color: rgb(255,255,255);">Password </label><input class="form-control" type="password"  value="********" readonly></div>
-                                </div>
-                                <div class="col-sm-12 col-md-6">
-                                    <div class="form-group"><label style="color: rgb(255,255,255);">Confirm Password</label><input class="form-control" type="password" required=""></div>
-                                </div>
-                            </div>
-                            <hr>
-                            <div class="form-row">
-                                <div class="col-md-12 content-right"><button class="btn btn-primary form-btn" type="submit">SAVE </button></div>
-                            </div>
+
+                            <?php
+										switch ($_GET["ins"]){
+											case "modif" :
+											  include("modif.php");
+											break;
+											default :
+												echo'<hr>
+                                                <div class="form-row">
+                                                <form method="POST">
+                                                    <div class="col-sm-12 col-md-6">
+                                                        <div class="form-group"><label style="color: rgb(255,255,255);">First Name</label><input class="form-control" type="text" name="firstname" value="';
+                                                        echo  $ligne['prenom'];
+                                                        echo '" required="" readonly></div>
+                                                        <div class="form-group"><label style="color: rgb(255,255,255);">Address</label><input class="form-control" type="text" name="firstname" value="';
+                                                        echo  $ligne['adress'];
+                                                        echo '" required="" readonly></div>
+                                                    </div>
+                                                    <div class="col-sm-12 col-md-6">
+                                                        <div class="form-group"><label style="color: rgb(255,255,255);">Lastname </label><input class="form-control" type="text" name="lastname" value="';
+                                                        echo  $ligne['nom'];
+                                                        echo '" required="" readonly></div>
+                                                        <div class="form-group"><label style="color: rgb(255,255,255);">Location</label><input class="form-control" type="text" name="lastname" value="';
+                                                        echo  $ligne['ville'];
+                                                        echo '" required="" readonly></div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group"><label style="color: rgb(255,255,255);">Birtday</label><input class="form-control" type="tel"  value="';
+                                                echo  $ligne['datenaiss'];
+                                                echo '"required="" readonly></div>
+                                                <div class="form-group"><label style="color: rgb(255,255,255);">Email </label><input class="form-control" type="email" value="';
+                                                echo  $ligne['email'];
+                                                echo '" required="" readonly></div>
+                                                <div class="form-row">
+                                                    <div class="col-sm-12 col-md-6">
+                                                        <div class="form-group"><label style="color: rgb(255,255,255);">Password </label><input class="form-control" type="password"  value="********" readonly></div>
+                                                    </div>
+                                                    <div class="col-sm-12 col-md-6">
+                                                        <div class="form-group"><label style="color: rgb(255,255,255);">Confirm Password</label><input class="form-control" type="password" required="" readonly></div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="form-row">
+                                                    <div class="col-md-12 content-right"><button class="btn btn-primary form-btn" onclick="window.location.href=\'?ins=modif\'">MODIF</button>  <button class="btn btn-primary form-btn" style="font-family: Cabin, sans-serif;">SAVE</button> </div>
+                                                </div>
+                                                </form>';
+                    
+											break;
+                                            }
+                            ?>
+                            
+
                         </div>
                     </div>
                 </form>
