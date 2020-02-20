@@ -44,7 +44,7 @@ if($count>=1) // nom d'utilisateur et mot de passe correctes
         'X-Mailer: PHP/' . phpversion();
         mail($email_to, $email_subject, $email_message, $headers);
 
-  header('Location: Connexion.php');
+  //header('Location: Connexion.php');
   exit();
 }
 elseif (isset($_POST['email']) && $count<1)
@@ -194,7 +194,8 @@ include 'menu.php';
             <h2 class="sr-only">Login Form</h2>
             <div class="illustration"><i class="icon ion-ios-gear-outline"></i></div>
             <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
-            <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Send</button></div><a class="forgot" href="Connexion.php">Return to login</a></form>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit">Send</button></div>
+            <a class="forgot" href="Connexion.php">Return to login</a></form>
 </div>
 
 

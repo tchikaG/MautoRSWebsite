@@ -157,6 +157,8 @@
             
             </html>
             ';
+            echo 'ERREUR';
+            exit();
             echo'<head><meta http-equiv="refresh" content="1;URL=Connexion.php"></head>';
             //header('Location: Connexion.php');
         }
@@ -177,7 +179,9 @@ include 'head.php'
             <div class="illustration"><i class="icon ion-ios-locked-outline"></i></div>
             <div class="form-group"><input class="form-control" type="email" id="email" name="email" placeholder="Email"></div>
             <div class="form-group"><input class="form-control" type="password" id="passwd" name="passwd" placeholder="Password"></div>
-            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="font-family: Cabin, sans-serif;">Log In</button></div><a class="forgot" href="inscription.php">Register</a><a class="forgot" href="perdu.php">Forgot your email or password?</a>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="font-family: Cabin, sans-serif;">Log In</button></div>
+            <a class="forgot" href="inscription.php">Register</a>
+            <a class="forgot" href="perdu.php">Forgot your email or password?</a>
         </form>
     </div>
 

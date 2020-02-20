@@ -6,7 +6,7 @@
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="event.php" style="color: rgba(255,255,255,0.9);">Evénement</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="media.php" style="color: rgba(255,255,255,0.5);">Média</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="shop.html" style="color: rgba(255,255,255,0.5);">Shop</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="connexion.php" style="color: rgba(255,255,255,0.5);">Compte</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="Connexion.php" style="color: rgba(255,255,255,0.5);">Compte</a></li>
                 </ul>
             </div>
         </div>
