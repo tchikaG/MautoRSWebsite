@@ -12,11 +12,10 @@ email = '".$email."' ";
 $exec_requete = mysqli_query($db,$requete);
 $reponse      = mysqli_fetch_array($exec_requete);
 $count = $reponse['count(*)'];
-if($count>=1) // nom d'utilisateur et mot de passe correctes
+if($count==1) // nom d'utilisateur et mot de passe correctes
 {
-    $requete1 = "UPDATE T_Utilisateur SET motdepasse = 'b62885129ee6b6a5d7188a2863907bad' WHERE email = '".$email."' ";
+            $requete1 = "UPDATE T_Utilisateur SET motdepasse = 'b62885129ee6b6a5d7188a2863907bad' WHERE email = '".$email."' ";
             $exec_requete1 = mysqli_query($db,$requete1);
-            echo $requete1;
             sleep (1);
 
             $email_from = "noreplay@mautors.com";
@@ -45,7 +44,7 @@ if($count>=1) // nom d'utilisateur et mot de passe correctes
         mail($email_to, $email_subject, $email_message, $headers);
 
   //header('Location: Connexion.php');
-  exit();
+
 }
 elseif (isset($_POST['email']) && $count<1)
 {
