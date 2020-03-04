@@ -171,10 +171,11 @@ elseif (isset($_POST['email']) && $count<1)
   
   </html>
   ';
-  echo'<head><meta http-equiv="refresh" content="1;URL=perdu.php"></head>';}
+  echo'<head><meta http-equiv="refresh" content="1;URL=perdu.php"></head>';
+}
 else
 {
-
+    //exit();
 }
 
 ?>
