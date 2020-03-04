@@ -21,10 +21,13 @@ if(!empty($_POST['nom']) && !empty($_POST['ride']) && !empty($_POST['comment']))
     $nom = mysqli_real_escape_string($db,htmlspecialchars($_POST['nom']));
     $ride = mysqli_real_escape_string($db,htmlspecialchars($_POST['ride']));
     $comment = mysqli_real_escape_string($db,htmlspecialchars($_POST['comment']));
+    $date_debut = mysqli_real_escape_string($db,htmlspecialchars($_POST['date_debut']));
+    $date_fin = mysqli_real_escape_string($db,htmlspecialchars($_POST['date_fin']));
+
 
  	  //$surname = mysqli_real_escape_string($db,htmlspecialchars($_POST['surname'])); 
 
-    $requete = "INSERT INTO T_Event (nom, ride, comment) VALUES ('".$nom."', '".$ride."', '".$comment."');";
+    $requete = "INSERT INTO T_Event (nom, ride, comment, date_debut, date_fin) VALUES ('".$nom."', '".$ride."', '".$comment."', '".$date_debut."', '".$date_fin."');";
     $exec_requete = mysqli_query($db,$requete);
     $reponse      = mysqli_fetch_array($exec_requete);
 
@@ -64,15 +67,15 @@ if(!empty($_POST['nom']) && !empty($_POST['ride']) && !empty($_POST['comment']))
                         </div>
                         <div class="form-row">
                             <div class="col-12 col-sm-6 col-md-12 col-lg-6">
-                                <div class="form-group"><label for="from-phone" style="color: rgb(255,255,255);">Date</label><span class="required-input">*</span>
+                                <div class="form-group"><label for="from-phone" style="color: rgb(255,255,255);">Date Debut</label><span class="required-input">*</span>
                                     <div class="input-group">
-                                        <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-calendar-times-o"></i></span></div><input class="form-control" type="text" id="from-phone" name="date" required="" placeholder="date"></div>
+                                        <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-calendar-times-o"></i></span></div><input class="form-control" type="text" id="date_debut" name="date_debut" required="" placeholder="date debut"></div>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6 col-md-12 col-lg-6">
-                                <div class="form-group"><label for="from-calltime" style="color: rgb(255,255,255);">Time to Event</label>
+                                <div class="form-group"><label for="from-phone" style="color: rgb(255,255,255);">Date Fin</label><span class="required-input">*</span>
                                     <div class="input-group">
-                                        <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-clock-o"></i></span></div><select class="form-control" id="from-calltime" name="call time"><optgroup label="Time"><option value="1 day">1 day</option><option value="2 days">2 days</option><option value="3 days">3 days</option><option value="4 days">4 days</option><option value="5 days">5 days</option><option value="6 days">6 days</option><option value="7 days">7 days</option><option value="8 days">8 days</option><option value="9 days">9 days</option><option value="10 days">10 days</option><option value="11 days">11 days</option><option value="12 days">12 days</option><option value="13 days">13 days</option><option value="14 days">14 days</option><option value="15 days">15 days</option></optgroup></select></div>
+                                        <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-calendar-times-o"></i></span></div><input class="form-control" type="text" id="date_fin" name="date_fin" required="" placeholder="date fin"></div>
                                 </div>
                             </div>
                         </div>

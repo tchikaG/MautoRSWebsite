@@ -30,13 +30,14 @@ include 'menu.php';
             <?php foreach ($resultat as $event): ?>
                     
                 <div class="col-md-12" style="padding-top: 20px;padding-bottom: 20px;">
-                    <div style="height: 130px;background-color: #ffffff;">
-                        <div style="padding-left: 10px; padding-top: 10px;">
+                    <div style="height: 100%;background-color: #ffffff;">
+                        <div style="padding-left: 10px; padding-top: 10px; padding-bottom: 20px;">
                         <id style="font-weight: bold; font-size:20px;"> <?= $event['nom'] ?> </id>
                         <br>
-                        <id style="font-style: italic;"> <?= $event['ride'] ?> </id>
+                        <id style="font-style: italic;"> <?= $event['ride']   ?> <br> </id>  <id style="font-style: italic;"> Begin: <?= $event['date_debut'] ?> </id><id style="font-style: italic;"> &nbsp; End: <?= $event['date_fin'] ?> </id>
                         <br> <br> 
                         <?= $event['comment'] ?>
+
                         </div>
                     </div>
                 </div>
