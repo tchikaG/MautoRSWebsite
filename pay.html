@@ -60,39 +60,31 @@
 <body>
     <div class="login-dark" style="height: 1200px;width: 1911px;">
         <div class="row .payment-dialog-row">
-            <div class="col-12 col-md-4 offset-md-4" style="height: 442px;margin-top: 262px;">
+            <div class="col-12 col-md-4 offset-md-2" style="height: 442px;margin-top: 262px;">
                 <div class="card credit-card-box" style="height: 557px;">
                     <div class="card-header">
                         <h3><span class="panel-title-text">Payment Details </span><img class="img-fluid panel-title-image" src="assets/img/accepted_cards.png"></h3>
                     </div>
                     <div class="card-body" style="height: 642px;">
-                        <form id="payment-form" style="margin-top: 23px;height: 429px;width: 711px;max-width: 547px;">
-                            <div class="form-row">
-                                <div class="col-12">
-                                    <div class="form-group"><label for="cardNumber">Card number </label>
-                                        <div class="input-group"><input class="form-control" type="tel" id="cardNumber" required="" placeholder="Valid Card Number">
-                                            <div class="input-group-append"><span class="input-group-text"><i class="fa fa-credit-card"></i></span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="col-7">
-                                    <div class="form-group"><label for="cardExpiry"><span>expiration </span><span>EXP </span> date</label><input class="form-control" type="tel" id="cardExpiry" required="" placeholder="MM / YY"></div>
-                                </div>
-                                <div class="col-5 pull-right">
-                                    <div class="form-group"><label for="cardCVC">cv code</label><input class="form-control" type="tel" id="cardCVC" required="" placeholder="CVC"></div>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="col-12">
-                                    <div class="form-group"><label for="couponCode">coupon code</label><input class="form-control" type="text" id="couponCode"></div>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="col-12"><button class="btn btn-success btn-block btn-lg" type="submit">pay</button></div>
-                            </div>
+
+
+                        <script src="https://pay.sandbox.datatrans.com/upp/payment/js/datatrans-2.0.0.js"></script>
+                        <form id="paymentForm"
+                              data-merchant-id="1100004624"
+                              data-amount="1000"
+                              data-currency="CHF"
+                              data-refno="123456789"
+                              data-sign="30916165706580013"
+                              data-paymentmethod="APL,VIS,ECA,MAU,PFC,TWI">
+                            <button class="btn btn-success btn-block btn-lg" id="paymentButton">Pay</button>
                         </form>
+                        
+                        <script type="text/javascript">
+                            document.getElementById("paymentButton").onclick = function () {
+                                Datatrans.startPayment({'form': '#paymentForm'});
+                            }; 
+                        </script>
+
                     </div>
                 </div>
             </div>

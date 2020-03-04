@@ -9,7 +9,8 @@ include 'menu.php';
 ?>
 
 <body>
-    <div data-bs-parallax-bg="true" style="height: 300px;background-image: url(assets/img/star-sky.jpg);background-position: center;background-size: cover;"></div><i class="fa fa-shopping-basket float-right" style="font-size: 78px;margin-top: 90px;margin-right: 90px;margin-bottom: 50px;margin-left: 30px;"></i>
+    <div data-bs-parallax-bg="true" style="height: 300px;background-image: url(assets/img/star-sky.jpg);background-position: center;background-size: cover;"></div>
+    <i class="fa fa-shopping-basket float-right" style="font-size: 78px;margin-top: 90px;margin-right: 90px;margin-bottom: 50px;margin-left: 30px;"></i>
     <div class="container" style="height: 1500px;padding-top: 200px;width: 1200px;">
         <div class="row">
             <div class="col-md-6 col-lg-4">
