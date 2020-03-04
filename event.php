@@ -32,11 +32,11 @@ include 'menu.php';
                 <div class="col-md-12" style="padding-top: 20px;padding-bottom: 20px;">
                     <div style="height: 130px;background-color: #ffffff;">
                         <div style="padding-left: 10px; padding-top: 10px;">
-                        <id style="font-weight: bold; font-size:20px;"> <?= $event['name'] ?> </id>
+                        <id style="font-weight: bold; font-size:20px;"> <?= $event['nom'] ?> </id>
                         <br>
                         <id style="font-style: italic;"> <?= $event['ride'] ?> </id>
                         <br> <br> 
-                        <?= $event['description'] ?>
+                        <?= $event['comment'] ?>
                         </div>
                     </div>
                 </div>

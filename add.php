@@ -6,7 +6,7 @@
 include 'head.php';
 include 'menu.php';
 
-if($_POST['password'] == $_POST['passwordrepeat'] && $_POST['password']!='' && !empty($_POST['firstname']))
+if(!empty($_POST['nom']) && !empty($_POST['ride']) && !empty($_POST['comment']))
  {
      // connexion à la base de données
      $db_username = 'mautorsadmin';
@@ -18,15 +18,21 @@ if($_POST['password'] == $_POST['passwordrepeat'] && $_POST['password']!='' && !
 
      // on applique les deux fonctions mysqli_real_escape_string et htmlspecialchars
      // pour éliminer toute attaque de type injection SQL et XSS
-    $name = mysqli_real_escape_string($db,htmlspecialchars($_POST['name']));
+    $nom = mysqli_real_escape_string($db,htmlspecialchars($_POST['nom']));
     $ride = mysqli_real_escape_string($db,htmlspecialchars($_POST['ride']));
-    $description = mysqli_real_escape_string($db,htmlspecialchars($_POST['description']));
+    $comment = mysqli_real_escape_string($db,htmlspecialchars($_POST['comment']));
 
  	  //$surname = mysqli_real_escape_string($db,htmlspecialchars($_POST['surname'])); 
 
-    $requete = "INSERT INTO T_Utilisateur (nom, prenom, description, adress, ville, email, motdepasse) VALUES ('".$name."', '".$firstname."', '".$date."', '".$adress."', '".$ville."', '".$email."', '".$password."');";
+    $requete = "INSERT INTO T_Event (nom, ride, comment) VALUES ('".$nom."', '".$ride."', '".$comment."');";
     $exec_requete = mysqli_query($db,$requete);
     $reponse      = mysqli_fetch_array($exec_requete);
+
+   echo '<meta http-equiv="refresh" content="0;url=event.php">'; 
+ }
+ else
+ {
+
  }
 
 ?>
@@ -36,7 +42,8 @@ if($_POST['password'] == $_POST['passwordrepeat'] && $_POST['password']!='' && !
         <div class="container-fluid" style="background-image: url(&quot;assets/img/star-sky.jpg&quot;);height: 1079px;">
             <h1 style="padding-top: 162px;color: rgb(255,255,255);">Add Event</h1>
             <hr>
-            <form id="contactForm" action="javascript:void(0);" method="get"><input class="form-control" type="hidden" name="Introduction" value="This email was sent from www.awebsite.com"><input class="form-control" type="hidden" name="subject" value="Awebsite.com Contact Form"><input class="form-control" type="hidden"
+            <form method="POST">
+                <input class="form-control" type="hidden" name="Introduction" value="This email was sent from www.awebsite.com"><input class="form-control" type="hidden" name="subject" value="Awebsite.com Contact Form"><input class="form-control" type="hidden"
                     name="to" value="email@awebsite.com">
                 <div class="form-row">
                     <div class="col-md-6">
@@ -47,13 +54,13 @@ if($_POST['password'] == $_POST['passwordrepeat'] && $_POST['password']!='' && !
                     <div class="col-12 col-md-6" id="message" style="margin-left: 475px;margin-right: 475px;">
                         <h2 class="h4" style="color: rgb(255,255,255);"><i class="fa fa-plus"></i> Add Event<small><small class="required-input">&nbsp;(*required)</small></small>
                         </h2>
-                        <div class="form-group"><label for="from-name" style="color: rgb(255,255,255);">Name of Event</label><span class="required-input">*</span>
+                        <div class="form-group"><label for="nom" style="color: rgb(255,255,255);">Name of Event</label><span class="required-input">*</span>
                             <div class="input-group">
-                                <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-commenting-o"></i></span></div><input class="form-control" type="text" id="from-name" name="name" required="" placeholder="Full Name"></div>
+                                <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-commenting-o"></i></span></div><input class="form-control" type="text" id="nom" name="nom" required="" placeholder="Full Name"></div>
                         </div>
-                        <div class="form-group"><label for="from-email" style="color: rgb(255,255,255);">Ride</label><span class="required-input">*</span>
+                        <div class="form-group"><label for="ride" style="color: rgb(255,255,255);">Ride</label><span class="required-input">*</span>
                             <div class="input-group">
-                                <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-road"></i></span></div><input class="form-control" type="text" id="from-email" name="Ride" required="" placeholder="Ride (lausanne -> vevey)"></div>
+                                <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-road"></i></span></div><input class="form-control" type="text" id="ride" name="ride" required="" placeholder="Ride (lausanne -> vevey)"></div>
                         </div>
                         <div class="form-row">
                             <div class="col-12 col-sm-6 col-md-12 col-lg-6">
@@ -69,7 +76,7 @@ if($_POST['password'] == $_POST['passwordrepeat'] && $_POST['password']!='' && !
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group"><label for="from-comments" style="color: rgb(255,255,255);">objet</label><textarea class="form-control" id="from-comments" name="comments" placeholder="Enter Comments" rows="5"></textarea></div>
+                        <div class="form-group"><label for="comment" style="color: rgb(255,255,255);">Comments</label><textarea class="form-control" id="comment" name="comment" placeholder="Enter Comments" rows="5"></textarea></div>
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col"><button class="btn btn-primary btn-block" type="reset"><i class="fa fa-undo"></i> Reset</button></div>
