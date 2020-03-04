@@ -5,6 +5,30 @@
 <?php
 include 'head.php';
 include 'menu.php';
+
+if($_POST['password'] == $_POST['passwordrepeat'] && $_POST['password']!='' && !empty($_POST['firstname']))
+ {
+     // connexion à la base de données
+     $db_username = 'mautorsadmin';
+     $db_password = 'mautorspassword';
+     $db_name     = 'mautorsdb';
+     $db_host     = 'localhost';
+     $db = mysqli_connect($db_host, $db_username, $db_password,$db_name)
+            or die('could not connect to database');
+
+     // on applique les deux fonctions mysqli_real_escape_string et htmlspecialchars
+     // pour éliminer toute attaque de type injection SQL et XSS
+    $name = mysqli_real_escape_string($db,htmlspecialchars($_POST['name']));
+    $ride = mysqli_real_escape_string($db,htmlspecialchars($_POST['ride']));
+    $description = mysqli_real_escape_string($db,htmlspecialchars($_POST['description']));
+
+ 	  //$surname = mysqli_real_escape_string($db,htmlspecialchars($_POST['surname'])); 
+
+    $requete = "INSERT INTO T_Utilisateur (nom, prenom, description, adress, ville, email, motdepasse) VALUES ('".$name."', '".$firstname."', '".$date."', '".$adress."', '".$ville."', '".$email."', '".$password."');";
+    $exec_requete = mysqli_query($db,$requete);
+    $reponse      = mysqli_fetch_array($exec_requete);
+ }
+
 ?>
 
 <body>
