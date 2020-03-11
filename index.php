@@ -12,6 +12,7 @@ include 'head.php';
             autoplay="" loop="" muted="">
             <source src="http://thenewcode.com/assets/videos/polina.mp4" type="video/mp4" wp-acf="[{'type':'url','name':'video','label':'Video','wrapper':{'width':30}}]" wp-attr="[{'target':'src','replace':'%1'}]">
             </video>
+            <!--  http://thenewcode.com/assets/videos/polina.mp4 -->
     </div>
     <section style="background-color: #000000;height: 823px;padding-top: 100px;padding-bottom: 100px;">
         <div class="container" style="background-color: #000000;">
