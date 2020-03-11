@@ -96,7 +96,7 @@
             <body>
                 <div class="login-dark">
                     <form method="post" style="padding-right: 15px;padding-left: 15px;">
-                        <h2 class="sr-only">Login Form</h2><a class="forgot" href="perdu.html" style="color: rgb(186,0,0);font-size: 26px;">Wrong password or email</a></form>
+                        <h2 class="sr-only">Login Form</h2><a class="forgot" href="perdu.php" style="color: rgb(186,0,0);font-size: 26px;">Wrong password or email</a></form>
                 </div>
                 <nav class="navbar navbar-light navbar-expand-md navbar navbar-expand-lg fixed-top" id="mainNav" style="color: rgb(255,255,255);font-size: 20px;font-family: Cabin, sans-serif;background-color: rgba(0,0,0,0.11);">
                     <div class="container-fluid"><a class="navbar-brand" href="index.php" style="color: rgba(255,255,255,0.9);background-image: url(&quot;assets/img/logo_MautoRS_final.png&quot;);width: 65px;height: 65px;background-position: center;background-size: contain;"></a><button data-toggle="collapse"
@@ -157,9 +157,9 @@
             
             </html>
             ';
-            echo 'ERREUR';
+            
+            echo'<head><meta http-equiv="refresh" content="2;URL=Connexion.php"></head>';
             exit();
-            echo'<head><meta http-equiv="refresh" content="1;URL=Connexion.php"></head>';
             //header('Location: Connexion.php');
         }
     }
