@@ -31,14 +31,25 @@ include 'menu.php';
         <div class="container">
             <h1 class="text-center" style="font-family: Cabin, sans-serif;">Nos PHotos</h1>
             <p class="text-center" style="color: rgb(0,0,0);">Vous pouvez les voirs aussi sur notre <a href="https://www.instagram.com/mautors_/">instagram</a>&nbsp;</p>
-            <div class="filtr-controls"><span class="active" data-filter="all">all </span><span data-filter="1">Cars</span><span data-filter="2">Roadtrip</span><span data-filter="3">Landscapes</span></div>
+
+            <script type="text/javascript" src="path/to/instafeed.min.js"></script>
+            <script type="text/javascript">
+            var feed = new Instafeed({
+            clientId: 'mautors_'
+            });
+            feed.run();
+            </script>
+            <div id="instafeed"></div>
+
+            <!-- <div class="powr-instagram-feed" id="d7f498cb_1584011793"></div><script src="https://www.powr.io/powr.js?platform=web"></script> -->
+            <!-- <div class="filtr-controls"><span class="active" data-filter="all">all </span><span data-filter="1">Cars</span><span data-filter="2">Roadtrip</span><span data-filter="3">Landscapes</span></div>
             <div class="row filtr-container">
                 <div class="col-sm-6 col-md-4 col-lg-3 filtr-item" data-category="1, 3"><a href="https://source.unsplash.com/RLLR0oRz16Y/900x1200.jpg"><img class="img-fluid" data-caption="<strong>MercedesC63 amg</strong><br><em>Roadtrip 1</em>" src="https://source.unsplash.com/RLLR0oRz16Y/600x600.jpg"></a></div>
                 <div class="col-sm-6 col-md-4 col-lg-3 filtr-item"
                     data-category="2"><a href="https://source.unsplash.com/vUNQaTtZeOo/900x1200.jpg"><img class="img-fluid" src="https://source.unsplash.com/vUNQaTtZeOo/600x600.jpg"></a></div>
                 <div class="col-sm-6 col-md-4 col-lg-3 filtr-item" data-category="1, 3"><a href="https://source.unsplash.com/ZbMJ5VLrpQ4/900x1200.jpg"><img class="img-fluid" src="https://source.unsplash.com/ZbMJ5VLrpQ4/600x600.jpg"></a></div>
                 <div class="col-sm-6 col-md-4 col-lg-3 filtr-item" data-category="2, 3"><a href="https://source.unsplash.com/HWwF4OnXAdM/1200x900.jpg"><img class="img-fluid" src="https://source.unsplash.com/HWwF4OnXAdM/600x600.jpg"></a></div>
-            </div>
+            </div> -->
         </div>
     </section>
     </div><a class="cd-top js-cd-top cd-top--fade-out cd-top--show" style="background-image: url(&quot;assets/img/cd-top-arrow.svg&quot;);background-color: rgba(118,118,118,0.8);background-repeat: no-repeat;" href="#0">Top</a>

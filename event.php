@@ -18,10 +18,10 @@ include 'menu.php';
 ?>
 
 <body>
-<div data-bs-parallax-bg="true" style="height: 1000px;background-image: url(&quot;assets/img/star-sky.jpg&quot;);background-position: center;background-size: auto;padding-top: 300px;padding-bottom: 200px;">
+<div data-bs-parallax-bg="true" style="height: 1000px;background-image: url(&quot;/media/79.jpg&quot;);background-position: center;background-size: auto;padding-top: 300px;padding-bottom: 200px;">
         <div class="container">
-            <h1 style="font-family: Cabin, sans-serif;padding-bottom: 10px;">Event</h1>
-            <p class="text-center" style="font-size: 25px;font-family: Cabin, sans-serif;color: rgb(41,41,41);"><strong>Sign up for one of our roadtrips</strong></p>
+            <h1 style="font-family: Cabin, sans-serif;padding-bottom: 10px;color: white;">Event</h1>
+            <p class="text-center" style="font-size: 25px;font-family: Cabin, sans-serif;color: white;"><strong>Sign up for one of our roadtrips</strong></p>
         </div>
     </div>
     <div style="background-color: rgb(238,244,247);">
