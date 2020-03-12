@@ -10,7 +10,7 @@ include 'head.php';
             <p class="text-center" style="font-family: Cabin, sans-serif;font-size: 20px;color: rgb(62,62,62);">The engine of travel</p><a class="btn btn-link btn-block btn-circle" role="button" data-aos="fade-down" data-aos-duration="2400" style="margin-top: 150px;"><i class="fa fa-angle-double-down animated" style="color: rgb(0,0,0);font-size: 90px;"></i></a></div>
         <video
             autoplay="" loop="" muted="">
-            <source src="http://thenewcode.com/assets/videos/polina.mp4" type="video/mp4" wp-acf="[{'type':'url','name':'video','label':'Video','wrapper':{'width':30}}]" wp-attr="[{'target':'src','replace':'%1'}]">
+            <source src="vid.m4v" type="video/mp4" wp-acf="[{'type':'url','name':'video','label':'Video','wrapper':{'width':30}}]" wp-attr="[{'target':'src','replace':'%1'}]">
             </video>
             <!--  http://thenewcode.com/assets/videos/polina.mp4 -->
     </div>
