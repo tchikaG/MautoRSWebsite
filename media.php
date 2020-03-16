@@ -32,13 +32,31 @@ include 'menu.php';
             <h1 class="text-center" style="font-family: Cabin, sans-serif;">Nos PHotos</h1>
             <p class="text-center" style="color: rgb(0,0,0);">Vous pouvez les voirs aussi sur notre <a href="https://www.instagram.com/mautors_/">instagram</a>&nbsp;</p>
 
-            <script type="text/javascript" src="path/to/instafeed.min.js"></script>
+
+            <script src="assets/js/InstagramFeed.js"></script>
+<script>
+    (function(){
+        new InstagramFeed({
+            'username': 'instagram',
+            'container': document.getElementById("instagram-feed1"),
+            'display_profile': true,
+            'display_biography': true,
+            'display_gallery': true,
+            'callback': null,
+            'styling': true,
+            'items': 8,
+            'items_per_row': 4,
+            'margin': 1 
+        });
+    })();
+</script>
+            <!-- <script type="text/javascript" src="path/to/instafeed.min.js"></script>
             <script type="text/javascript">
             var feed = new Instafeed({
             clientId: 'mautors_'
             });
             feed.run();
-            </script>
+            </script> -->
             <div id="instafeed"></div>
 
             <!-- <div class="powr-instagram-feed" id="d7f498cb_1584011793"></div><script src="https://www.powr.io/powr.js?platform=web"></script> -->
