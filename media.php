@@ -37,7 +37,7 @@ include 'menu.php';
 <script>
     (function(){
         new InstagramFeed({
-            'username': 'instagram',
+            'username': 'mautors_',
             'container': document.getElementById("instagram-feed1"),
             'display_profile': true,
             'display_biography': true,
