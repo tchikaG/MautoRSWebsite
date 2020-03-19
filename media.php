@@ -34,9 +34,9 @@ include 'menu.php';
             <p class="text-center" style="color: rgb(0,0,0);">Vous pouvez les voirs aussi sur notre <a href="https://www.instagram.com/mautors_/">instagram</a>&nbsp;</p>
         </div>
 
-        
 
-        <script src="jquery.instagramFeed.min.js"></script>
+
+        <script src="assets/js/jquery.instagramFeed.min.js"></script>
     <script>
         (function($){
             $(window).on('load', function(){
