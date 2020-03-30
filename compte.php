@@ -20,6 +20,7 @@ include 'head.php';
 include 'menu.php';
 ?>
 
+                
 <body style="background-image: url(&quot;assets/img/star-sky.jpg&quot;);">
     <div class="row" style="background-image: url(&quot;assets/img/star-sky.jpg&quot;);">
         <div class="col">
@@ -29,10 +30,8 @@ include 'menu.php';
                         <div class="col-md-4 relative">
                             <div class="avatar">
                                 <div class="avatar-bg center"></div>
-                            </div><input type="file" class="form-control" name="avatar-file"></div>
                         <div class="col-md-8">
                             <h1 style="color: rgb(255,255,255);">Profile </h1>
-
                             <?php
 										switch ($_GET["ins"]){
 											case "modif" :
@@ -42,7 +41,7 @@ include 'menu.php';
 												echo'<hr>
                                                 <div class="form-row">
                                                 <form method="POST">
-                                                    <div class="col-sm-12 col-md-6">
+                                                    <div class="col-sm-12 col-md-6>
                                                         <div class="form-group"><label style="color: rgb(255,255,255);">First Name</label><input class="form-control" type="text" name="firstname" value="';
                                                         echo  $ligne['prenom'];
                                                         echo '" required="" readonly></div>
@@ -83,7 +82,6 @@ include 'menu.php';
                                             }
                             ?>
                             
-
                         </div>
                     </div>
                 </form>

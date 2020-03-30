@@ -27,15 +27,44 @@ include 'menu.php';
     <div style="background-color: rgb(238,244,247);">
         <div class="container" style="padding-top: 50px;padding-bottom: 80px;"><button onclick="location.href = 'add.php';" class="btn btn-primary" type="button" style="margin-left: 1006px;margin-bottom: 28px;background-color: rgba(93,130,169,0.83);font-size: 25px;">ADD</button>
             <div class="row">
+
+              <?js mobiscroll.settings = {
+    theme: 'ios',
+    themeVariant: 'light'
+};
+
+var now = new Date();
+
+mobiscroll.calendar('#demo-calendar-date-picker', {
+    display: 'inline',
+    onInit: function (event, inst) {
+        inst.setVal(now, true);
+    }
+});
+
+mobiscroll.calendar('#demo-calendar-header', {
+    display: 'bubble',
+    headerText: '{value}',
+    onInit: function (event, inst) {
+        inst.setVal(now, true);
+    }
+});
+
+mobiscroll.calendar('#demo-calendar-non-form', {
+    display: 'bubble',
+    onInit: function (event, inst) {
+        inst.setVal(now, true);
+    }
+});?>
             <?php foreach ($resultat as $event): ?>
-                    
+
                 <div class="col-md-12" style="padding-top: 20px;padding-bottom: 20px;">
                     <div style="height: 100%;background-color: #ffffff;">
                         <div style="padding-left: 10px; padding-top: 10px; padding-bottom: 20px;">
                         <id style="font-weight: bold; font-size:20px;"> <?= $event['nom'] ?> </id>
                         <br>
                         <id style="font-style: italic;"> <?= $event['ride']   ?> <br> </id>  <id style="font-style: italic;"> Begin: <?= $event['date_debut'] ?> </id><id style="font-style: italic;"> &nbsp; End: <?= $event['date_fin'] ?> </id>
-                        <br> <br> 
+                        <br> <br>
                         <?= $event['comment'] ?>
 
                         </div>

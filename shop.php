@@ -20,8 +20,16 @@ include 'menu.php';
 
 ?>
 
+<?php
+
+function addbasket($basket = 0) {
+    $basket++;
+}
+?>
+
 <body>
     <div data-bs-parallax-bg="true" style="height: 300px;background-image: url(assets/img/star-sky.jpg);background-position: center;background-size: cover;"></div>
+    <?php echo $basket; ?>
     <link href="pay.php" class="fa fa-shopping-basket float-right" style="font-size: 58px;margin-top: 90px;margin-right: 90px;margin-bottom: 50px;margin-left: 30px;"></link>
     <div class="container" style="height: 1500px;padding-top: 200px;width: 1200px;">
         <div class="row">
@@ -35,15 +43,20 @@ include 'menu.php';
                     <div class="pricing-content">
                         <ul class="list-unstyled">
                             <li><strong><?= $shop['nombre'] ?> x </strong><?= $shop['nom'] ?></li>
-                        </ul><a class="pricingTable-signup" style="background-color: rgb(84,149,247);" href="#">Ajouter</a></div>
+                        </ul><a class="pricingTable-signup" style="background-color: rgb(84,149,247);" href="" onclick="<?php addbasket();?>">Ajouter</a></div>
                 </div>
             </div>
             <?php endforeach; ?>
             </div>
         </div>
     </div>
+
+
+
+
+
     
-    <?php
+<?php
 include 'footer.php';
 include 'script.php';
 ?>
