@@ -52,5 +52,5 @@
                 <link rel="stylesheet" href="assets/css/Video-Parallax-Background.css">
                 <link rel="stylesheet" href="assets/css/Video-Responsive.css">
                 <link rel="stylesheet" href="assets/css/Zig-Zag-Timeline-v3.css">
+                <link rel="stylesheet" href="fullcalendar/fullcalendar.min.css" />
             </head>
-

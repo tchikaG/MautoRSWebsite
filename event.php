@@ -9,8 +9,7 @@ $requete = "SELECT * FROM T_Event";
 $resultat = $db->query($requete);
 mysqli_fetch_all($resultat,MYSQLI_ASSOC);
 ?>
-<!DOCTYPE html>
-<html>
+
 <!----------php---------->
 <?php
 include 'head.php';
@@ -24,42 +23,16 @@ include 'menu.php';
             <p class="text-center" style="font-size: 25px;font-family: Cabin, sans-serif;color: white;"><strong>Sign up for one of our roadtrips</strong></p>
         </div>
     </div>
+</div>
+
+
     <div style="background-color: rgb(238,244,247);">
         <div class="container" style="padding-top: 50px;padding-bottom: 80px;"><button onclick="location.href = 'add.php';" class="btn btn-primary" type="button" style="margin-left: 1006px;margin-bottom: 28px;background-color: rgba(93,130,169,0.83);font-size: 25px;">ADD</button>
             <div class="row">
-
-              <?js mobiscroll.settings = {
-    theme: 'ios',
-    themeVariant: 'light'
-};
-
-var now = new Date();
-
-mobiscroll.calendar('#demo-calendar-date-picker', {
-    display: 'inline',
-    onInit: function (event, inst) {
-        inst.setVal(now, true);
-    }
-});
-
-mobiscroll.calendar('#demo-calendar-header', {
-    display: 'bubble',
-    headerText: '{value}',
-    onInit: function (event, inst) {
-        inst.setVal(now, true);
-    }
-});
-
-mobiscroll.calendar('#demo-calendar-non-form', {
-    display: 'bubble',
-    onInit: function (event, inst) {
-        inst.setVal(now, true);
-    }
-});?>
-            <?php foreach ($resultat as $event): ?>
+      <?php foreach ($resultat as $event): ?>
 
                 <div class="col-md-12" style="padding-top: 20px;padding-bottom: 20px;">
-                    <div style="height: 100%;background-color: #ffffff;">
+                    <div style="background-color: #ffffff;">
                         <div style="padding-left: 10px; padding-top: 10px; padding-bottom: 20px;">
                         <id style="font-weight: bold; font-size:20px;"> <?= $event['nom'] ?> </id>
                         <br>
@@ -74,7 +47,15 @@ mobiscroll.calendar('#demo-calendar-non-form', {
             </div>
         </div>
     </div>
+
+        <?php
+        include './Calendar/index.php';
+        ?>
+
+
     <div class="footer-dark">
+        
+
 <!---------------php-------------->
 
 </div><a class="cd-top js-cd-top cd-top--fade-out cd-top--show" style="background-image: url(&quot;assets/img/cd-top-arrow.svg&quot;);background-color: rgba(118,118,118,0.8);background-repeat: no-repeat;" href="#">Top</a>
