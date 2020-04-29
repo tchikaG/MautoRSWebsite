@@ -45,7 +45,6 @@
                 <link rel="stylesheet" href="assets/css/Profile-Edit-Form-1.css">
                 <link rel="stylesheet" href="assets/css/Profile-Edit-Form.css">
                 <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
-                <link rel="stylesheet" href="assets/css/styles.css">
                 <link rel="stylesheet" href="assets/css/Team-Boxed.css">
                 <link rel="stylesheet" href="assets/css/User-Payment-Overview-Rows---Panel-Container.css">
                 <link rel="stylesheet" href="assets/css/Video-Parallax-Background-v2.css">
@@ -53,4 +52,5 @@
                 <link rel="stylesheet" href="assets/css/Video-Responsive.css">
                 <link rel="stylesheet" href="assets/css/Zig-Zag-Timeline-v3.css">
                 <link rel="stylesheet" href="fullcalendar/fullcalendar.min.css" />
+                <link rel="stylesheet" href="assets/css/styles.css">
             </head>

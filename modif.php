@@ -66,4 +66,5 @@ else
     <div class="col-md-12 content-right"><button class="btn btn-primary form-btn" onclick="window.location.href='compte.php'">BACK</button><button class="btn btn-primary form-btn" type="submit" style="font-family: Cabin, sans-serif;">SAVE</button></div>
 
 </div>
+</div>
 </form>

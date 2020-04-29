@@ -1,4 +1,5 @@
 <?php
+session_start();
 $db_username = 'mautorsadmin';
 $db_password = 'mautorspassword';
 $db_name     = 'mautorsdb';
@@ -15,31 +16,45 @@ mysqli_fetch_all($resultat,MYSQLI_ASSOC);
 
 <?php
 
-include 'head.php';
-include 'menu.php';
+include ('head.php');
+?>
+<body>
+<?php
+include ('menu.php');
 
 ?>
+
 
 <?php
-if(isset($_SESSION['basket']))
+$task = $_GET['task'];
+if ($task == 'add')
 {
+
+    $id_p = $_GET['id_p'];
+    $_SESSION['basket'][$id_p]++;
+    // echo '<pre>';
+    // print_r($_SESSION);
+    // echo '</pre>';
+
 }
-else
+foreach ($_SESSION['basket'] as $pif){
+    $count += $pif;
+}
+if($task == 'add')
 {
-    $_SESSION['basket'] = 0;
-}
-function addbasket() {
-    $_SESSION['basket'] ++;
+    echo '<meta http-equiv="refresh" content="0; url=shop.php">';
 }
 ?>
 
-<body>
+
     <div data-bs-parallax-bg="true" style="height: 300px;background-image: url(assets/img/star-sky.jpg);background-position: center;background-size: cover;"></div>
-    <?php echo $_SESSION['basket']; ?>
-    <link href="pay.php" class="fa fa-shopping-basket float-right" style="font-size: 58px;margin-top: 90px;margin-right: 90px;margin-bottom: 50px;margin-left: 30px;"></link>
+    <div>  <a id="basket" href="pay.php" class="fa fa-shopping-basket float-right" style="font-size: 58px;margin-top: 90px;margin-right: 90px;margin-bottom: 50px;margin-left: 30px;color:black;"> 
+    <span style="font-family:Arial, Helvetica, sans-serif; font-size:50px;"><?php echo $count; ?></span></a>
+</div>
+  
     <div class="container" style="height: 1500px;padding-top: 200px;width: 1200px;">
         <div class="row">
-        <?php foreach ($resultat as $shop): ?>
+        <?php foreach ($resultat as $shop){ ?>
             <div class="col-md-6 col-lg-4">
                 <div class="pricingTable" style="padding-bottom: 0px;">
                     <div class="pricingTable-header"><span class="icon"><img src="./shop/<?=$shop['Images']?>.png" style="width: 134px;height: 133px;margin-top: -80px;"></span>
@@ -49,11 +64,10 @@ function addbasket() {
                     <div class="pricing-content">
                         <ul class="list-unstyled">
                             <li><strong><?= $shop['nombre'] ?> x </strong><?= $shop['nom'] ?></li>
-                        </ul><a class="pricingTable-signup" style="background-color: rgb(84,149,247);"  href="" onclick="<?php addbasket(); ?>">Ajouter</a></div>
+                        </ul><a class="pricingTable-signup" style="background-color: rgb(84,149,247);"   href="<?php echo "shop.php?task=add&id_p={$shop['id_product']}";?> ">Ajouter</a></div>
                 </div>
             </div>
-            <?php endforeach; ?>
-            </div>
+        <?php }?>
         </div>
     </div>
 

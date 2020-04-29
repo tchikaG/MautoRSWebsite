@@ -15,7 +15,7 @@
                         <h3>MautoGB</h3>
                         <p>The engine of travel</p>
                     </div>
-                    <div class="col item social"><a href="https://www.youtube.com/channel/UCt_xFYkMUnXI5OnaVi-ibUA"><i class="icon ion-social-youtube-outline"></i></a><a href="https://www.instagram.com/mautors_/"><i class="icon ion-social-instagram"></i></a></div>
+                    <div class="col item social"><a href="https://www.youtube.com/channel/UCt_xFYkMUnXI5OnaVi-ibUA"><i class="icon ion-social-youtube-outline"></i></a><a href="https://www.instagram.com/bmstudio_7/"><i class="icon ion-social-instagram"></i></a></div>
                 </div>
                 <p class="copyright">MautoGB © 2020</p>
             </div>

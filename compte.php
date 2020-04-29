@@ -82,6 +82,7 @@ include 'menu.php';
                                             }
                             ?>
                             
+                           </div> 
                         </div>
                     </div>
                 </form>

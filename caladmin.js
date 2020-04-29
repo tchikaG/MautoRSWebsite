@@ -1,18 +1,9 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-<link rel="stylesheet" href="fullcalendar/fullcalendar.min.css" />
-<script src="fullcalendar/lib/jquery.min.js"></script>
-<script src="fullcalendar/lib/moment.min.js"></script>
-<script src="fullcalendar/fullcalendar.min.js"></script>
-
 <script>
 
 $(document).ready(function () {
     var calendar = $('#calendar').fullCalendar({
         editable: true,
-        events: "fetch-event.php",
+        events: "./calendar_bryan/fetch-event.php",
         displayEventTime: false,
         eventRender: function (event, element, view) {
             if (event.allDay === 'true') {
@@ -21,6 +12,7 @@ $(document).ready(function () {
                 event.allDay = false;
             }
         },
+        
         selectable: true,
         selectHelper: true,
         select: function (start, end, allDay) {
@@ -31,7 +23,7 @@ $(document).ready(function () {
                 var end = $.fullCalendar.formatDate(end, "Y-MM-DD HH:mm:ss");
 
                 $.ajax({
-                    url: 'add-event.php',
+                    url: './calendar_bryan/add-event.php',
                     data: 'title=' + title + '&start=' + start + '&end=' + end,
                     type: "POST",
                     success: function (data) {
@@ -56,7 +48,7 @@ $(document).ready(function () {
                     var start = $.fullCalendar.formatDate(event.start, "Y-MM-DD HH:mm:ss");
                     var end = $.fullCalendar.formatDate(event.end, "Y-MM-DD HH:mm:ss");
                     $.ajax({
-                        url: 'edit-event.php',
+                        url: './calendar_bryan/edit-event.php',
                         data: 'title=' + event.title + '&start=' + start + '&end=' + end + '&id=' + event.id,
                         type: "POST",
                         success: function (response) {
@@ -69,7 +61,7 @@ $(document).ready(function () {
             if (deleteMsg) {
                 $.ajax({
                     type: "POST",
-                    url: "delete-event.php",
+                    url: "./calendar_bryan/delete-event.php",
                     data: "&id=" + event.id,
                     success: function (response) {
                         if(parseInt(response) > 0) {
@@ -89,38 +81,3 @@ function displayMessage(message) {
     setInterval(function() { $(".success").fadeOut(); }, 1000);
 }
 </script>
-
-<style>
-body {
-    margin-top: 50px;
-    text-align: center;
-    font-size: 12px;
-    font-family: "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
-}
-
-#calendar {
-    width: 700px;
-    margin: 0 auto;
-}
-
-.response {
-    height: 60px;
-}
-
-.success {
-    background: #cdf3cd;
-    padding: 10px 60px;
-    border: #c3e6c3 1px solid;
-    display: inline-block;
-}
-</style>
-</head>
-<body>
-    <h2>PHP Calendar Event Management FullCalendar JavaScript Library</h2>
-
-    <div class="response"></div>
-    <div id='calendar'></div>
-</body>
-
-
-</html>
