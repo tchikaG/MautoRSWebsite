@@ -33,12 +33,12 @@ include 'menu.php';
                         <div class="col-md-8">
                             <h1 style="color: rgb(255,255,255);">Profile </h1>
                             <?php
-										switch ($_GET["ins"]){
-											case "modif" :
-											  include("modif.php");
-											break;
-											default :
-												echo'<hr>
+                                        switch ($_GET["ins"]){
+                                            case "modif" :
+                                              include("modif.php");
+                                            break;
+                                            default :
+                                                echo'<hr>
                                                 <div class="form-row">
                                                 <form method="POST">
                                                     <div class="col-sm-12 col-md-6>
@@ -61,7 +61,9 @@ include 'menu.php';
                                                 <div class="form-group"><label style="color: rgb(255,255,255);">Birtday</label><input class="form-control" type="tel"  value="';
                                                 echo  $ligne['datenaiss'];
                                                 echo '"required="" readonly></div>
-                                                <div class="form-group"><label style="color: rgb(255,255,255);">Email </label><input class="form-control" type="email" value="';
+                                                <div class="form-group"><label style="color: rgb(255,255,255);">Email </label
+
+><input class="form-control" type="email" value="';
                                                 echo  $ligne['email'];
                                                 echo '" required="" readonly></div>
                                                 <div class="form-row">
@@ -78,7 +80,7 @@ include 'menu.php';
                                                 </div>
                                                 </form>';
                     
-											break;
+                                            break;
                                             }
                             ?>
                             

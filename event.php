@@ -157,7 +157,7 @@ body_1 {
     $email = $_SESSION['email'];
     $db = mysqli_connect($db_host, $db_username, $db_password,$db_name)
             or die('could not connect to database');
-        $requete = "SELECT id_utilisateur FROM T_Utilisateur WHERE email = '".$email."' ";
+        $requete = "SELECT id_utilisateur FROM t_utilisateur WHERE email = '".$email."' ";
         $exec_requete = $db->query($requete);
         $ligne = $exec_requete->fetch_assoc();
         if($ligne['id_utilisateur'] == '1'){
@@ -166,7 +166,7 @@ body_1 {
         else
         {
         }
-        ?>
+    ?>
         
         <div class="row">
       <?php foreach ($resultat as $event): ?>
@@ -175,8 +175,23 @@ body_1 {
                     <div style="background-color: #ffffff;">
                         <div style="padding-left: 10px; padding-top: 10px; padding-bottom: 20px;">
                         <id style="font-weight: bold; font-size:20px;"> <?= $event['nom'] ?> </id>
+                        <?php
+                        $email = $_SESSION['email'];
+                        $db = mysqli_connect($db_host, $db_username, $db_password,$db_name)
+                                or die('could not connect to database');
+                            $requete = "SELECT id_utilisateur FROM t_utilisateur WHERE email = '".$email."' ";
+                            $exec_requete = $db->query($requete);
+                            $ligne = $exec_requete->fetch_assoc();
+                            if($ligne['id_utilisateur'] == '1'){
+                            echo '<form><button type="submit" formmethod="get" class="btn btn-primary"  style="margin-left: 1006px;background-color: rgba(93,130,169,0.83);font-size: 15px;">Edit</button></form>';
+                            }
+                            else
+                            {
+                            }
+                        ?>
                         <br>
-                        <id style="font-style: italic;"> <?= $event['ride']   ?> <br> </id>  <id style="font-style: italic;"> Begin: <?= $event['date_debut'] ?> </id><id style="font-style: italic;"> &nbsp; End: <?= $event['date_fin'] ?> </id>
+                        <id style="font-style: italic;"> <?= $event['ride']   ?> 
+                         <br> </id>    <id style="font-style: italic;"> Begin: <?= $event['date_debut'] ?> </id><id style="font-style: italic;"> &nbsp; End: <?= $event['date_fin'] ?> </id>
                         <br> <br>
                         <?= $event['comment'] ?>
 

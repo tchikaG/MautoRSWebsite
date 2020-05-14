@@ -1,20 +1,20 @@
 (function(){
 	var backTop = document.getElementsByClassName('js-cd-top')[0],
-		// browser window scroll (in pixels) after which the "back to top" link is shown
+		// défilement de la fenêtre du navigateur (en pixels) après quoi le lien "haut de page" est affiché
 		offset = 300,
-		//browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+		//défilement de la fenêtre du navigateur (en pixels) après quoi l'opacité du lien "haut de page" est réduite
 		offsetOpacity = 1200,
 		scrollDuration = 700
 		scrolling = false;
 	if( backTop ) {
-		//update back to top visibility on scrolling
+		//mise à jour retour en haut visibilité sur le défilement
 		window.addEventListener("scroll", function(event) {
 			if( !scrolling ) {
 				scrolling = true;
 				(!window.requestAnimationFrame) ? setTimeout(checkBackToTop, 250) : window.requestAnimationFrame(checkBackToTop);
 			}
 		});
-		//smooth scroll to top
+		//défilement fluide vers le haut
 		backTop.addEventListener('click', function(event) {
 			event.preventDefault();
 			(!window.requestAnimationFrame) ? window.scrollTo(0, 0) : scrollTop(scrollDuration);
@@ -27,13 +27,13 @@
 		( windowTop > offsetOpacity ) && addClass(backTop, 'cd-top--fade-out');
 		scrolling = false;
 	}
-	
+
 	function scrollTop(duration) {
 	    var start = window.scrollY || document.documentElement.scrollTop,
 	        currentTime = null;
-	        
+
 	    var animateScroll = function(timestamp){
-	    	if (!currentTime) currentTime = timestamp;        
+	    	if (!currentTime) currentTime = timestamp;
 	        var progress = timestamp - currentTime;
 	        var val = Math.max(Math.easeInOutQuad(progress, start, -start, duration), 0);
 	        window.scrollTo(0, val);
@@ -52,7 +52,7 @@
 		return -c/2 * (t*(t-2) - 1) + b;
 	};
 
-	//class manipulations - needed if classList is not supported
+	//manipulations de classe - nécessaires si classList n'est pas pris en charge
 	function hasClass(el, className) {
 	  	if (el.classList) return el.classList.contains(className);
 	  	else return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'));
@@ -65,7 +65,7 @@
 	}
 	function removeClass(el, className) {
 		var classList = className.split(' ');
-	  	if (el.classList) el.classList.remove(classList[0]);	
+	  	if (el.classList) el.classList.remove(classList[0]);
 	  	else if(hasClass(el, classList[0])) {
 	  		var reg = new RegExp('(\\s|^)' + classList[0] + '(\\s|$)');
 	  		el.className=el.className.replace(reg, ' ');
