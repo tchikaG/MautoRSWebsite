@@ -3,9 +3,9 @@
                 class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1" style="max-width: 328px;">
                 <ul class="nav navbar-nav">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="event.php" style="color: rgba(255,255,255,0.9);">Evénement</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="event.php" style="color: rgba(255,255,255,0.9);">Event</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="media.php" style="color: rgba(255,255,255,0.5);">Média</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="shop.php" style="color: rgba(255,255,255,0.5);">Shop</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="loc.php" style="color: rgba(255,255,255,0.5);">Location</a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="Connexion.php" style="color: rgba(255,255,255,0.5);">Compte</a></li>
                 </ul>
             </div>

@@ -18,11 +18,11 @@ if(!empty($_POST['nom']) && !empty($_POST['ride']) && !empty($_POST['comment']))
 
      // on applique les deux fonctions mysqli_real_escape_string et htmlspecialchars
      // pour éliminer toute attaque de type injection SQL et XSS
-    $nom = mysqli_real_escape_string($db,htmlspecialchars($_POST['nom']));
-    $ride = mysqli_real_escape_string($db,htmlspecialchars($_POST['ride']));
-    $comment = mysqli_real_escape_string($db,htmlspecialchars($_POST['comment']));
-    $date_debut = mysqli_real_escape_string($db,htmlspecialchars($_POST['date_debut']));
-    $date_fin = mysqli_real_escape_string($db,htmlspecialchars($_POST['date_fin']));
+     $nom = mysqli_real_escape_string($db,htmlspecialchars($_POST['nom']));
+     $ride = mysqli_real_escape_string($db,htmlspecialchars($_POST['ride']));
+     $comment = mysqli_real_escape_string($db,htmlspecialchars($_POST['comment']));
+     $date_debut = mysqli_real_escape_string($db,htmlspecialchars($_POST['date_debut']));
+     $date_fin = mysqli_real_escape_string($db,htmlspecialchars($_POST['date_fin']));
 
 
  	  //$surname = mysqli_real_escape_string($db,htmlspecialchars($_POST['surname'])); 
@@ -31,9 +31,7 @@ if(!empty($_POST['nom']) && !empty($_POST['ride']) && !empty($_POST['comment']))
     $exec_requete = mysqli_query($db,$requete);
     $reponse      = mysqli_fetch_array($exec_requete);
 
-    $requete2 = "SELECT * FROM T_Event WHERE nom = 'Le premier';";
-    $execute_req = mysqli_query($db,$requete);
-    $data      = mysqli_fetch_assoc($execute_req);
+    
 
    echo '<meta http-equiv="refresh" content="0;url=event.php">'; 
  }
@@ -41,6 +39,14 @@ if(!empty($_POST['nom']) && !empty($_POST['ride']) && !empty($_POST['comment']))
  {
 
  }
+
+    $requete2 = "SELECT * FROM T_event";
+    $execute_req = mysqli_query($db,$requete);
+    $data      = mysqli_fetch_assoc($execute_req);
+    //$execute_req = $db->query($requete2);
+    //$data = $execute_req->fetch_assoc();
+    $id_e = $_GET['id_e'];
+    echo $id_e;
 
 ?>
 
@@ -59,11 +65,11 @@ if(!empty($_POST['nom']) && !empty($_POST['ride']) && !empty($_POST['comment']))
                 </div>
                 <div class="form-row">
                     <div class="col-12 col-md-6" id="message" style="margin-left: 475px;margin-right: 475px;">
-                        <h2 class="h4" style="color: rgb(255,255,255);"><i class="fa fa-plus"></i> Add Event<small><small class="required-input">&nbsp;(*required)</small></small>
+                        <h2 class="h4" style="color: rgb(255,255,255);"><i class="fa fa-plus"></i> Add Event <small><small class="required-input">&nbsp;(*required)</small></small>
                         </h2>
                         <div class="form-group"><label for="nom" style="color: rgb(255,255,255);">Name of Event</label><span class="required-input">*</span>
                             <div class="input-group">
-                                <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-commenting-o"></i></span></div><input class="form-control" type="text" id="nom" name="nom" required="" placeholder="Full Name"></div>
+                                <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-commenting-o"></i></span></div><input class="form-control" type="text" id="nom" name="nom" required=""  value="<?php echo $data['nom']; ?>"></div>
                         </div>
                         <div class="form-group"><label for="ride" style="color: rgb(255,255,255);">Ride</label><span class="required-input">*</span>
                             <div class="input-group">

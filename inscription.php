@@ -1,8 +1,6 @@
 <!----------php---------->
 <?php
-
 include 'head.php';
-include 'menu.php';
 
 session_start();
  if($_POST['password'] != $_POST['passwordrepeat'] && $_POST['password']!='' && isset($_POST['firstname']))//isset($_POST['fistname']) && isset($_POST['date']) && isset($_POST['address']) && isset($_POST['location']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['passwordrepeat']))
@@ -69,17 +67,17 @@ session_start();
     <body>
         <div class="login-dark">
             <form method="post" style="padding-right: 15px;padding-left: 15px;">
-                <h2 class="sr-only">Login Form</h2><a class="forgot" href="perdu.php" style="color: rgb(186,0,0);font-size: 26px;">Not the same password</a></form>
+                <h2 class="sr-only">Login Form</h2><a class="forgot" href="perdu.html" style="color: rgb(186,0,0);font-size: 26px;">Not the same password</a></form>
         </div>
         <nav class="navbar navbar-light navbar-expand-md navbar navbar-expand-lg fixed-top" id="mainNav" style="color: rgb(255,255,255);font-size: 20px;font-family: Cabin, sans-serif;background-color: rgba(0,0,0,0.11);">
-            <div class="container-fluid"><a class="navbar-brand" href="index.php" style="color: rgba(255,255,255,0.9);background-image: url(&quot;assets/img/logo_MautoRS_final.png&quot;);width: 65px;height: 65px;background-position: center;background-size: contain;"></a><button data-toggle="collapse"
+            <div class="container-fluid"><a class="navbar-brand" href="index.html" style="color: rgba(255,255,255,0.9);background-image: url(&quot;assets/img/logo_MautoRS_final.png&quot;);width: 65px;height: 65px;background-position: center;background-size: contain;"></a><button data-toggle="collapse"
                     class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navcol-1" style="max-width: 328px;">
                     <ul class="nav navbar-nav">
-                        <li class="nav-item" role="presentation"><a class="nav-link active" href="event.php" style="color: rgba(255,255,255,0.9);">Evénement</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="media.php" style="color: rgba(255,255,255,0.5);">Média</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="shop.php" style="color: rgba(255,255,255,0.5);">Shop</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="Connexion.php" style="color: rgba(255,255,255,0.5);">Compte</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link active" href="event.html" style="color: rgba(255,255,255,0.9);">Evénement</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="media.html" style="color: rgba(255,255,255,0.5);">Média</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="shop.html" style="color: rgba(255,255,255,0.5);">Shop</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="Connexion.html" style="color: rgba(255,255,255,0.5);">Compte</a></li>
                     </ul>
                 </div>
             </div>
@@ -92,9 +90,9 @@ session_start();
                         <div class="col-sm-6 col-md-3 item">
                             <h3><strong>Quick access</strong></h3>
                             <ul>
-                                <li><a href="info.php">Information</a></li>
-                                <li><a href="Contact.php">Contact</a></li>
-                                <li><a href="Connexion.php">Connexion</a></li>
+                                <li><a href="info.html">Information</a></li>
+                                <li><a href="Contact.html">Contact</a></li>
+                                <li><a href="Connexion.html">Connexion</a></li>
                             </ul>
                         </div>
                         <div class="col-md-6 item text">
@@ -146,7 +144,7 @@ session_start();
      // pour éliminer toute attaque de type injection SQL et XSS
     // $username = mysqli_real_escape_string($db,htmlspecialchars($_POST['username']));
  	  $name = $_POST['name'];
- 	  //$surname = mysqli_real_escape_string($db,htmlspecialchars($_POST['surname'])); 
+ 	  //$surname = mysqli_real_escape_string($db,htmlspecialchars($_POST['surname']));
     $firstname = $_POST['firstname'];
     $date = $_POST['date'];
     $adress = $_POST['address'];
@@ -220,14 +218,14 @@ session_start();
     <body>
         <div class="login-dark">
             <form method="post" style="padding-right: 15px;padding-left: 15px;">
-                <h2 class="sr-only">Login Form</h2><a class="forgot" href="perdu.php" style="color: rgb(0,207,69);font-size: 26px;">Account created</a></form>
+                <h2 class="sr-only">Login Form</h2><a class="forgot" href="perdu.html" style="color: rgb(0,207,69);font-size: 26px;">Account created</a></form>
         </div>
         <nav class="navbar navbar-light navbar-expand-md navbar navbar-expand-lg fixed-top" id="mainNav" style="color: rgb(255,255,255);font-size: 20px;font-family: Cabin, sans-serif;background-color: rgba(0,0,0,0.11);">
-            <div class="container-fluid"><a class="navbar-brand" href="index.php" style="color: rgba(255,255,255,0.9);background-image: url(&quot;assets/img/logo_MautoRS_final.png&quot;);width: 65px;height: 65px;background-position: center;background-size: contain;"></a><button data-toggle="collapse"
+            <div class="container-fluid"><a class="navbar-brand" href="index.html" style="color: rgba(255,255,255,0.9);background-image: url(&quot;assets/img/logo_MautoRS_final.png&quot;);width: 65px;height: 65px;background-position: center;background-size: contain;"></a><button data-toggle="collapse"
                     class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navcol-1" style="max-width: 328px;">
                     <ul class="nav navbar-nav">
-                        <li class="nav-item" role="presentation"><a class="nav-link active" href="event.php" style="color: rgba(255,255,255,0.9);">Evénement</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link active" href="event.html" style="color: rgba(255,255,255,0.9);">Evénement</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="media.html" style="color: rgba(255,255,255,0.5);">Média</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="shop.html" style="color: rgba(255,255,255,0.5);">Shop</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="Connexion.html" style="color: rgba(255,255,255,0.5);">Compte</a></li>
@@ -281,14 +279,14 @@ session_start();
 
     </html>
     ';
-    echo'<head><meta http-equiv="refresh" content="2;URL=Connexion.php"></head>';
+    echo'<head><meta http-equiv="refresh" content="2;URL=connexion.php"></head>';
     exit();
 
  }
 
-
-
 ?>
+ 
+
 
 <!DOCTYPE html>
 <html>
@@ -307,9 +305,79 @@ session_start();
                 <div class="form-group"><input class="form-control" type="password" id="password" name="password" placeholder="password" required='true'></div>
                 <div class="form-group"><input class="form-control" type="password" id="passwordrepeat" name="passwordrepeat" placeholder="password (repeat)" required='true'></div>
                 <div class="form-group">
-                    <div class="form-check"><label class="form-check-label"><input class="form-check-input" type="checkbox">I agree to the <a href="License.html">license terms</a>.</label></div>
+                    <div class="form-check"><label class="form-check-label"><input class="form-check-input" type="checkbox" required='true'>I agree to the <a href="License.html">license terms</a>.</label></div>
                 </div>
-                <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-color: rgb(33,74,128);">Sign Up</button></div><a class="already" href="Connexion.php">You already have an account? Login here.</a></form>
+
+       
+                <script type="text/javascript">
+             // incertion variable
+                 function Captcha(){
+                     var alpha = new Array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','1','2','3','4','5','6','7','8','9','0');
+                     var i;
+                     for (i=0;i<6;i++){
+                       // verification
+                       var a = alpha[Math.floor(Math.random() * alpha.length)];
+                       var b = alpha[Math.floor(Math.random() * alpha.length)];
+                       var c = alpha[Math.floor(Math.random() * alpha.length)];
+                       var d = alpha[Math.floor(Math.random() * alpha.length)];
+                       var e = alpha[Math.floor(Math.random() * alpha.length)];
+                       var f = alpha[Math.floor(Math.random() * alpha.length)];
+                       var g = alpha[Math.floor(Math.random() * alpha.length)];
+                      }
+                    var code = a + ' ' + b + ' ' + ' ' + c + ' ' + d + ' ' + e + ' '+ f + ' ' + g;
+                    document.getElementById("mainCaptcha").value = code
+                  }
+                 //verification
+                  function ValidCaptcha(){
+                      var string1 = removeSpaces(document.getElementById('mainCaptcha').value);
+                      var string2 = removeSpaces(document.getElementById('txtInput').value);
+                      if (string1 == string2){
+                        document.write('<div class="form-group"><button  class="btn btn-primary btn-block" type="submit" style="background-color: rgb(33,74,128);">Sign Up</button></div>');
+                      }
+                      else{
+                        location.reload();
+                      }
+                  }
+                  function removeSpaces(string){
+                    return string.split(' ').join('');
+                  }
+             </script>
+             <!-- Visuelle -->
+        </head>
+
+     <body onload="Captcha();">
+        <table>
+          <tr>
+           <td>
+                <br />
+           </td>
+          </tr>
+          <tr>
+           <td>
+
+             <div id='enable' onClick=vueRequete(document.getElementById('reqVisible').innerHTML);
+             onmousedown='if (typeof (event.preventDefault)!=undefined) {event.preventDefault();}'> <br>
+               <input type="text" id="mainCaptcha"
+                   style="background-image:url(assets/img/captcha.jpg); text-align:center; border:none;
+                   font-weight:bold; font-family:Modern" />
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <input type="text" id="txtInput"/>
+          </td>
+         </tr>
+         <input id="Button1" type="button" value="Check" onclick="ValidCaptcha();"/>
+         <tr>
+          <td>
+            <input type="button" id="refresh" value="Refresh" onclick="Captcha();" />
+          </td>
+        </tr>
+      </table>
+      </body>
+
+      <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-color: rgb(33,74,128);">Sign Up</button></div><a class="already" href="Connexion.php">You already have an account? Login here.</a></form>
+
         </div>
     </div>
 
@@ -317,6 +385,7 @@ session_start();
 <!---------------php-------------->
 <?php
 include 'footer.php';
+include 'menu.php';
 include 'script.php';
 ?>
 </body>

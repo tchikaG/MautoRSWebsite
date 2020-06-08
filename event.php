@@ -183,7 +183,10 @@ body_1 {
                             $exec_requete = $db->query($requete);
                             $ligne = $exec_requete->fetch_assoc();
                             if($ligne['id_utilisateur'] == '1'){
-                            echo '<form><button type="submit" formmethod="get" class="btn btn-primary"  style="margin-left: 1006px;background-color: rgba(93,130,169,0.83);font-size: 15px;">Edit</button></form>';
+                            echo '<form><a href="';
+                            echo "edit_event.php?id_e={$event['id_event']}";
+                            echo 'class="btn btn-primary"  style="margin-left: 1006px;background-color: rgba(93,130,169,0.83);font-size: 15px;">Edit</a></form>';
+                            
                             }
                             else
                             {
