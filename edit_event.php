@@ -39,16 +39,17 @@ if(!empty($_POST['nom']) && !empty($_POST['ride']) && !empty($_POST['comment']))
  {
 
  }
-
-    $requete2 = "SELECT * FROM T_event";
-    $execute_req = mysqli_query($db,$requete);
-    $data      = mysqli_fetch_assoc($execute_req);
-    //$execute_req = $db->query($requete2);
-    //$data = $execute_req->fetch_assoc();
     $id_e = $_GET['id_e'];
     echo $id_e;
-
+    $requete2 = "SELECT * FROM T_Event WHERE id_event = '".$id_e."' ";
+     $execute_req = mysqli_query($db,$requete);
+    $data      = mysqli_fetch_assoc($execute_req);
+    //  $execute_req = $db->query($requete2);
+    //  $data = $execute_req->fetch_assoc();
+    
+echo $data['nom'];
 ?>
+
 
 <body>
     <div>
@@ -67,9 +68,9 @@ if(!empty($_POST['nom']) && !empty($_POST['ride']) && !empty($_POST['comment']))
                     <div class="col-12 col-md-6" id="message" style="margin-left: 475px;margin-right: 475px;">
                         <h2 class="h4" style="color: rgb(255,255,255);"><i class="fa fa-plus"></i> Add Event <small><small class="required-input">&nbsp;(*required)</small></small>
                         </h2>
-                        <div class="form-group"><label for="nom" style="color: rgb(255,255,255);">Name of Event</label><span class="required-input">*</span>
+                        <div class="form-group"><label for="nom" style="color: rgb(255,255,255);" >Name of Event</label><span class="required-input">*</span>
                             <div class="input-group">
-                                <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-commenting-o"></i></span></div><input class="form-control" type="text" id="nom" name="nom" required=""  value="<?php echo $data['nom']; ?>"></div>
+                                <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-commenting-o"></i></span></div><input class="form-control" type="text" id="nom" name="nom" required=""  value="<?php echo $data['nom']; ?>"></input></div>
                         </div>
                         <div class="form-group"><label for="ride" style="color: rgb(255,255,255);">Ride</label><span class="required-input">*</span>
                             <div class="input-group">
