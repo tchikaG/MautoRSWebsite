@@ -35,14 +35,19 @@ if(!empty($_POST['nom']) && !empty($_POST['ride']) && !empty($_POST['comment']))
 
    echo '<meta http-equiv="refresh" content="0;url=event.php">'; 
  }
- else
- {
 
- }
+
+    $db_username = 'mautorsadmin';
+     $db_password = 'mautorspassword';
+     $db_name     = 'mautorsdb';
+     $db_host     = 'localhost';
+     $db = mysqli_connect($db_host, $db_username, $db_password,$db_name)
+            or die('could not connect to database');
+
     $id_e = $_GET['id_e'];
     echo $id_e;
     $requete2 = "SELECT * FROM T_Event WHERE id_event = '".$id_e."' ";
-     $execute_req = mysqli_query($db,$requete);
+     $execute_req = mysqli_query($db,$requete2);
     $data      = mysqli_fetch_assoc($execute_req);
     //  $execute_req = $db->query($requete2);
     //  $data = $execute_req->fetch_assoc();
@@ -74,23 +79,23 @@ echo $data['nom'];
                         </div>
                         <div class="form-group"><label for="ride" style="color: rgb(255,255,255);">Ride</label><span class="required-input">*</span>
                             <div class="input-group">
-                                <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-road"></i></span></div><input class="form-control" type="text" id="ride" name="ride" required="" placeholder="Ride (lausanne -> vevey)"></div>
+                                <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-road"></i></span></div><input class="form-control" type="text" id="ride" name="ride" required="" value="<?php echo $data['ride']; ?>"></div>
                         </div>
                         <div class="form-row">
                             <div class="col-12 col-sm-6 col-md-12 col-lg-6">
                                 <div class="form-group"><label for="from-phone" style="color: rgb(255,255,255);">Date Debut</label><span class="required-input">*</span>
                                     <div class="input-group">
-                                        <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-calendar-times-o"></i></span></div><input class="form-control" type="text" id="date_debut" name="date_debut" required="" placeholder="date debut"></div>
+                                        <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-calendar-times-o"></i></span></div><input class="form-control" type="text" id="date_debut" name="date_debut" required="" value="<?php echo $data['date_debut']; ?>"></div>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6 col-md-12 col-lg-6">
                                 <div class="form-group"><label for="from-phone" style="color: rgb(255,255,255);">Date Fin</label><span class="required-input">*</span>
                                     <div class="input-group">
-                                        <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-calendar-times-o"></i></span></div><input class="form-control" type="text" id="date_fin" name="date_fin" required="" placeholder="date fin"></div>
+                                        <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-calendar-times-o"></i></span></div><input class="form-control" type="text" id="date_fin" name="date_fin" required="" value="<?php echo $data['date_fin']; ?>"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group"><label for="comment" style="color: rgb(255,255,255);">Comments</label><textarea class="form-control" id="comment" name="comment" placeholder="Enter Comments" rows="5"></textarea></div>
+                        <div class="form-group"><label for="comment" style="color: rgb(255,255,255);">Comments</label><textarea class="form-control" id="comment" name="comment"  rows="5"><?php echo $data['comment']; ?></textarea></div>
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col"><button class="btn btn-primary btn-block" type="reset"><i class="fa fa-undo"></i> Reset</button></div>
