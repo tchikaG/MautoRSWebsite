@@ -48,16 +48,16 @@ if($task == 'add')
 
 
     <div data-bs-parallax-bg="true" style="height: 300px;background-image: url(assets/img/star-sky.jpg);background-position: center;background-size: cover;"></div>
-    <div>  <a id="basket" href="pay.php" class="fa fa-shopping-basket float-right" style="font-size: 58px;margin-top: 90px;margin-right: 90px;margin-bottom: 50px;margin-left: 30px;color:black;"> 
+    <div>  <a id="basket" href="pay.php" class="fa fa-shopping-basket float-right" style="font-size: 58px;margin-top: 90px;margin-right: 90px;margin-bottom: 50px;margin-left: 30px;color:black;">
     <span style="font-family:Arial, Helvetica, sans-serif; font-size:50px;"><?php echo $count; ?></span></a>
 </div>
-  
+
     <div class="container" style="height: 1500px;padding-top: 200px;width: 1200px;">
         <div class="row">
         <?php foreach ($resultat as $shop){ ?>
             <div class="col-md-6 col-lg-4">
                 <div class="pricingTable" style="padding-bottom: 0px;">
-                    <div class="pricingTable-header"><span class="icon"><img src="./shop/<?=$shop['Images']?>.png" style="width: 134px;height: 133px;margin-top: -80px;"></span>
+                    <div class="pricingTable-header"><span class="icon"><img src="./shop/<?=$shop['Images']?>.png" style="width: 100%;height: 100%;margin-top: -80px;"></span>
                         <h1 class="title" style="background-color: rgb(84,149,247);"><?= $shop['nom'] ?></h1>
                         <div class="price-value"><span class="currency" style="margin: -30px;margin-top: -12px;">CHF</span><span><?= $shop['prix'] ?></span></div>
                     </div>
@@ -75,7 +75,7 @@ if($task == 'add')
 
 
 
-    
+
 <?php
 include 'footer.php';
 include 'script.php';
