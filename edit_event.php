@@ -45,14 +45,13 @@ if(!empty($_POST['nom']) && !empty($_POST['ride']) && !empty($_POST['comment']))
             or die('could not connect to database');
 
     $id_e = $_GET['id_e'];
-    echo $id_e;
     $requete2 = "SELECT * FROM T_Event WHERE id_event = '".$id_e."' ";
      $execute_req = mysqli_query($db,$requete2);
     $data      = mysqli_fetch_assoc($execute_req);
     //  $execute_req = $db->query($requete2);
     //  $data = $execute_req->fetch_assoc();
     
-echo $data['nom'];
+
 ?>
 
 
